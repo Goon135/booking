@@ -9,8 +9,11 @@ from api.serializers import BookingSerializer, HotelSerializer, RoomSerializer, 
 # Create your views here.
 class UserModelViewSet(viewsets.ModelViewSet):
     queryset = ApiUser.objects.all()
-    http_method_names = ['post', 'path', 'get']
+    http_method_names = ['post', 'get']
     serializer_class = UserSerializer
+
+    authentication_classes = []
+    permission_classes = []
 
 class HotelModelViewSet(viewsets.ModelViewSet):
     queryset = Hotel.objects.all()
